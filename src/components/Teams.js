@@ -16,7 +16,7 @@ function Teams({teams, dispatch}) {
       <Row gutter={16}>
         {
           list && list.map( team => {
-            return <Col key={`${team.name}-${team.id}`} span={6}>
+            return <Col key={`${team.name}-${team.id}`} xs={32} sm={12} md={8} lg={6} xl={6}>
                       <Card 
                         className={styles.card}>
                           <div className={styles.contFlag}>

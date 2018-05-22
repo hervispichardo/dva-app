@@ -3,7 +3,7 @@ import createHistory from 'history/createBrowserHistory'
 import createLoading from 'dva-loading'
 
 import { noticeError } from './utils/notice'
-import './index.css'
+import './index.less'
 
 // 1. Initialize
 const app = dva({

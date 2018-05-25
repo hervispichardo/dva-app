@@ -10,7 +10,8 @@ const app = dva({
   ...createLoading({ effects: true }),
   history: createHistory(),
   onError(error) {
-    noticeError('App OnError', error, 0)
+    console.log("error: ", error);
+    // noticeError('App OnError', error, 0)
   }
 });
 

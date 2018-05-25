@@ -7,27 +7,21 @@ function AddTeam({teams, dispatch}) {
 
   let teamName, teamCode, teamKms;
 
-  const createTeam = (name, goals, rating, kms, code) => {
+  const createTeam = (name, code, votes) => {
     return {
       name: name,
-      goals: 5,
-      ranking: 4,
-      kms: kms,
-      years: ["1964", "1994", "2002"],
-      players: 5,
-      position: 'Campeon',
-      code: code
+      code: code,
+      votes: votes
     }
   }
 
   const add = () => {
     let name = teamName.input.value;
     let code = teamCode.input.value;
-    let kms = teamKms.input.value;
-    const team = createTeam(name, 5,4, kms, code);
+    const team = createTeam(name, code, 0,);
     console.log("add: ", team);
     dispatch({type: 'teams/addTeam', payload: team})
-
+    
   }
 
   return (
@@ -39,9 +33,6 @@ function AddTeam({teams, dispatch}) {
           </Col>
           <Col span={6}>
             <Input placeholder="Code" ref={c => (teamCode = c)}/>
-          </Col>
-          <Col span={6}>
-            <Input placeholder="Kms" ref={c => (teamKms = c)}/>
           </Col>
           <Col span={6}>
             <Button onClick={add} type="primary">Add</Button>

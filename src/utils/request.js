@@ -22,9 +22,10 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, options) {
-
+  const MASTER_KEY = 'WSDX2sB5IMdGgpSyMuD2Pl6XMBR0BOuh';
   const headers = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${MASTER_KEY}`
   }
 
   return fetch(url, {headers: headers, ...options})

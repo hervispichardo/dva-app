@@ -13,6 +13,7 @@ export default {
     setup({ dispatch, history }) {  
       return history.listen(({ pathname }) => {
           dispatch({ type: 'getTeams' })
+          
       })
     },
   },
@@ -40,6 +41,7 @@ export default {
     *addVote(action, { call, put, select }) {
       const id = yield action.payload;
       const team = yield call(addVote, id)
+      yield put({ type: 'new-vote', payload: team })
       const stateList = yield select(state => state.teams.list);
       const list = yield stateList.map( item => {
         if(item.id === id){

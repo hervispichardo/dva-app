@@ -7,9 +7,7 @@ const api = 'http://localhost:9000';
 
 export async function getTeams() {
 
-  return request(`${api}/teams/`,{
-    sort: ['votes']
-  })
+  return request(`${api}/teams/`)
   .then( res => {
     return res.data.rows;
   }).catch( err => console.log(err));
